@@ -11,7 +11,7 @@ export class NgxStatusHttpInterceptor implements HttpInterceptor {
 
   }
   intercept(httpRequest: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-      //handle http errors with appropriate status page
+      //handle http errors with appropriate status page,if set in forRoot
       if(this.config.interceptHttp){
         return next.handle(httpRequest).pipe(
           tap({
