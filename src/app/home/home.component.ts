@@ -9,7 +9,7 @@ import { StatusPagesService } from 'projects/ngx-status-pages/src/public-api';
 })
 export class HomeComponent {
   constructor(public statusPage:StatusPagesService,@Inject(MY_CONFIG_TOKEN) private config:any,public http:HttpClient){
-    http.get("http://localhost/gga").subscribe(rez=>{
+    http.get("https://httpstat.us/503").subscribe(rez=>{
       console.log(rez)
     })
   }

@@ -14,8 +14,8 @@ import { Custom404Component } from './custom404/custom404.component';
     HomeComponent
   ],
   imports: [
-    BrowserModule,
     StatusPagesModule,
+    BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
