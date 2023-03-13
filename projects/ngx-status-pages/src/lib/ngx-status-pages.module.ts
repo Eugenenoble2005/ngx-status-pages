@@ -1,5 +1,7 @@
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Inject, InjectionToken, ModuleWithProviders, NgModule, Type } from '@angular/core';
 import { Router, Routes } from '@angular/router';
+import { NgxStatusHttpInterceptor } from './ngx-status-http-interceptor';
 import { NgxStatusPagesRoutingModule } from './ngx-status-pages-routing-module';
 import { NgxStatusPagesComponent } from './ngx-status-pages.component';
 import { NgxStatus400PageComponent } from './status-pages/ngx-status-400.component';
@@ -18,6 +20,11 @@ import { MY_CONFIG_TOKEN } from './status-pages/token';
   ],
   exports: [
     NgxStatusPagesComponent
+  ],
+  providers:[
+    {
+      provide:HTTP_INTERCEPTORS,useClass:NgxStatusHttpInterceptor,multi:true
+    }
   ]
 })
 
@@ -41,13 +48,12 @@ export class StatusPagesModule {
       {path:"ngx-status-pages/401",component:config.custom401},
       {path:"ngx-status-pages/403",component:config.custom403},
       {path:"ngx-status-pages/405",component:config.custom405},
-      {path:"ngx-status-pages/429",component:config.custom429}
-    
+      {path:"ngx-status-pages/429",component:config.custom429},
+      {path:"**",component:config.custom404}
     ];
     dynamicRoutes.forEach(route => {
       this.router.config.push(route);
     });
-      console.log(this.router.config)
   }
 }
 export class StatusPagesConfig{
@@ -60,5 +66,5 @@ export class StatusPagesConfig{
  public custom500?:Type<any> = NgxStatus500PageComponent
  public custom503?:Type<any> = NgxStatus503PageComponent
  public custom400?:Type<any> = NgxStatus400PageComponent
- public interceptHttp?:boolean = true
+ public interceptHttp?:boolean = false
 } 

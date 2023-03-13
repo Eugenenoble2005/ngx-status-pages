@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StatusPagesModule } from 'projects/ngx-status-pages/src/public-api';
 import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 import { Custom404Component } from './custom404/custom404.component';
 
 @NgModule({
@@ -14,9 +15,9 @@ import { Custom404Component } from './custom404/custom404.component';
   ],
   imports: [
     BrowserModule,
+    StatusPagesModule,
     AppRoutingModule,
-    StatusPagesModule.forRoot({custom404:Custom404Component,custom429:Custom404Component})
-    
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
