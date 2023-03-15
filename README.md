@@ -1,27 +1,40 @@
-# NgxStatusPages
+<h1>Get started</h1>
+<h3>Overview:</h3>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+<p>Ngx-status-pages allows you to quickly create http error pages for angular projects for http errors like 404,401,500,e.t.c quickly and easily. All you need to do is install and import the module.
 
-## Development server
+<h3>Installation</h>
+<p>You may install the package locally through 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<code>
+npm i ngx-status-pages
+</code>
 
-## Code scaffolding
+<h3>Usage</h>
+<p><code>StatusPagesModule</code> Should be imported into your <b>root</b> angular module.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<code>
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-## Build
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { StatusPagesModule } from 'ngx-status-pages';
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+  
+@NgModule({
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    StatusPagesModule.forRoot({interceptHttp:true}),
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+</code>
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

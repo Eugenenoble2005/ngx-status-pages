@@ -15,7 +15,12 @@ export class StatusPagesService {
    * The status code for the particular page you need.
    */
   public showStatusPage(code:number){
-    this.router.navigateByUrl(`ngx-status-pages/${code}`,{skipLocationChange:true});
+    try{
+      this.router.navigateByUrl(`ngx-status-pages/${code}`,{skipLocationChange:true});
+    }
+    catch{
+      throw new Error(`No status page for code ${code}`);
+    }
    }
 
 }

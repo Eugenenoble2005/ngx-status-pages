@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { StatusPagesModule } from 'projects/ngx-status-pages/src/public-api';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { Custom404Component } from './custom404/custom404.component';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { Custom404Component } from './custom404/custom404.component';
     HomeComponent
   ],
   imports: [
-    StatusPagesModule,
+    StatusPagesModule.forRoot({interceptHttp:true}),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
