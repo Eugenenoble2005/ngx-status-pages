@@ -1,19 +1,25 @@
-<h1>Get started</h1>
-<h3>Overview:</h3>
+# ngx-status-pages  
 
-<p>Ngx-status-pages allows you to quickly create http error pages for angular projects for http errors like 404,401,500,e.t.c quickly and easily. All you need to do is install and import the module.</p>
 
-<h3>Installation</h>
-<p>You may install the package locally through </p>
+> Easily create http error pages for angular applications.
 
-<code>
+
+##  Get Started
+
+###  Installation
+
+You can install this package locally with npm.
+
+```bash
+# To get the latest stable version and update package.json file:
 npm i ngx-status-pages
-</code>
+```
 
-<h3>Usage</h>
-<p><code>StatusPagesModule</code> Should be imported into your <b>root</b> angular module.
+### <a name="usage"></a> Usage
 
-<code>
+`StatusPagesModule` should be imported into your root module like so:
+
+```typescript
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -30,11 +36,10 @@ import { StatusPagesModule } from 'ngx-status-pages';
     StatusPagesModule.forRoot({interceptHttp:true}),
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-</code>
 
+```
