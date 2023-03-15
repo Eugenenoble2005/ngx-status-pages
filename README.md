@@ -1,7 +1,7 @@
 <h1>Get started</h1>
 <h3>Overview:</h3>
 
-<p>Ngx-status-pages allows you to quickly create http error pages for angular projects for http errors like 404,401,500,e.t.c quickly and easily. All you need to do is install and import the module.
+<p>Ngx-status-pages allows you to quickly create http error pages for angular projects for http errors like 404,401,500,e.t.c quickly and easily. All you need to do is install and import the module.</p>
 
 <h3>Installation</h>
 <p>You may install the package locally through </p>
