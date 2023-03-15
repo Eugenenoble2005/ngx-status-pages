@@ -7,7 +7,7 @@ import { StatusPagesModule } from 'projects/ngx-status-pages/src/public-api';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 
-
+  
 @NgModule({
   declarations: [
     AppComponent,
