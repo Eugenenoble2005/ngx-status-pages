@@ -11,5 +11,5 @@ import { MY_CONFIG_TOKEN } from './token';
 export class NgxStatus404PageComponent {
   public code = 404
   public header = "Page Not Found"
-  public message = "Sorry but the page you are looking for does not exist, have been removed. name changed or is temporarily unavailable"
+  public message = "Sorry but the page you are looking for does not exist."
 }
