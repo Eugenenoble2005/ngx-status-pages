@@ -53,7 +53,7 @@ You can equally do this for other http status codes to configure custom pages.
 If you want to display a status page at anytime in your application, you can do this with the `StatusPagesService` service. In your component or service:
 
 ```typescript
-import { StatusPagesService } from 'projects/ngx-status-pages';
+import { StatusPagesService } from 'ngx-status-pages';
 
 
  constructor(public statusPage:StatusPagesService){
